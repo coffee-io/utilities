@@ -10,14 +10,4 @@ resource "aws_dynamodb_table" "artifacts" {
 		type = "S"
 	}
 
-	attribute {
-		name = "SourceChecksum"
-		type = "N"
-	}
-
-	attribute {
-		name = "Last deployment"
-		type = "S"
-	}
-
 }
