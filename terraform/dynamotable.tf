@@ -6,7 +6,7 @@ resource "aws_dynamodb_table" "artifacts" {
 	hash_key        = "Artifact"
 
 	attribute {
-		name = "Artifact"
+		name = "artifact"
 		type = "S"
 	}
 
