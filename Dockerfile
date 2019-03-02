@@ -1,7 +1,7 @@
-FROM golang:1.12-alpine
+FROM golang:1.12
 
-RUN apk add aws-cli --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted \
-	&& apk add git \
+RUN apt-get update -y \
+	&& apt-get install awscli git \
 	&& go get github.com/aws/aws-sdk-go/aws \
 	&& go get github.com/aws/aws-sdk-go/aws/session \
 	&& go get github.com/aws/aws-sdk-go/service/dynamodb \
