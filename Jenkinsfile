@@ -31,6 +31,16 @@ pipeline {
             }
         }
 
+        stage('Build and deploy source_has_changed') {
+            steps {
+                sh """
+                    cd source_has_changed
+                    docker build -t source_has_changed .
+                    docker run --env AWS_ACCESS_KEY_ID=${env.AWS_ACCESS_KEY_ID} --env AWS_SECRET_ACCESS_KEY=${env.AWS_SECRET_ACCESS_KEY} --env AWS_REGION=${env.AWS_DEFAULT_REGION}
+                """
+            }
+        }
+
     }
 }
 
