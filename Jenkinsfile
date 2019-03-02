@@ -15,6 +15,12 @@ pipeline {
 
     stages {
 
+        stage('Build base go image') {
+            steps {
+                sh 'docker -t gobuild .'
+            }
+        }
+
         stage('Deploy infrastructure') {
             steps {
                 sh """
