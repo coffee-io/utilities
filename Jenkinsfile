@@ -45,7 +45,7 @@ pipeline {
             steps {
                 sh """
                     cd update_source_cksum
-                    docker build -t update_source_cksum.
+                    docker build -t update_source_cksum .
                     docker run --env AWS_ACCESS_KEY_ID=${env.AWS_ACCESS_KEY_ID} --env AWS_SECRET_ACCESS_KEY=${env.AWS_SECRET_ACCESS_KEY} --env AWS_REGION=${env.AWS_DEFAULT_REGION} update_source_cksum
                 """
             }
